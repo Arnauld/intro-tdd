@@ -28,7 +28,7 @@ public class FirstStepsTest {
 		}
 
 		public Point scale(double factor) {
-			return new Point(x*factor, y*factor);
+			return new Point(x * factor, y * factor);
 		}
 
 	}
@@ -66,7 +66,7 @@ public class FirstStepsTest {
 		for (Point point : points) {
 			eq = eq.add(point);
 		}
-		return eq.scale(1.0/(points.length + 1.0));
+		return eq.scale(1.0 / (points.length + 1.0));
 	}
 
 }
