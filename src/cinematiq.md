@@ -1,9 +1,9 @@
-# On s'échauffe
+# On s'√©chauffe
 
-Laïus sur la fonctionalité demandée; calcul de barycentre de points...
+La√Øus sur la fonctionalit√© demand√©e; calcul de barycentre de points...
 
-Créer notre classe de test: `BarycenterTest` via le menu `New / Junit Test Case`
-La classe vient avec un test tout fait que l'on execute aussitôt pour le voir devenir échoué comme attendu.
+Cr√©er notre classe de test: `BarycenterTest` via le menu `New / Junit Test Case`
+La classe vient avec un test tout fait que l'on execute aussit√¥t pour le voir devenir √©chou√© comme attendu.
 On corrige le test:
 
 ```java
@@ -14,16 +14,16 @@ public void test() {
 }
 ```
 
-On relance, c'est désormais vert! hurray!!
-On en profite pour s'assurer la vue JUnit que l'on a décocher la case 
-(dans le drop down en haut à droite) `Show Test in hierarchy` 
+On relance, c'est d√©sormais vert! hurray!!
+On en profite pour s'assurer la vue JUnit que l'on a d√©cocher la case 
+(dans le drop down en haut √† droite) `Show Test in hierarchy` 
 
 # Notre premier vrai test
 
-Laïus de toujours commencer par un `assertEquals...`
-Le nom du test importe peu pour le moment, on raffinera après.
+La√Øus de toujours commencer par un `assertEquals...`
+Le nom du test importe peu pour le moment, on raffinera apr√®s.
 
-*On mettra tout de suite des décimaux, pour la génération automatique du construteur*
+*On mettra tout de suite des d√©cimaux, pour la g√©n√©ration automatique du construteur*
 
 ```java
 @Test
@@ -32,13 +32,13 @@ public void onePoint() {
 }
 ```
 
-Cela nous amène à plusieurs choses:
+Cela nous am√®ne √† plusieurs choses:
 1. Il nous manque la classe `Point`
-2. Il nous faut implémenter la notion d'égalité entre deux `Point`
+2. Il nous faut impl√©menter la notion d'√©galit√© entre deux `Point`
 
 -> Passage Clavier
 
-Créer la classe `Point` avec son constructor, mais sans champs 
+Cr√©er la classe `Point` avec son constructor, mais sans champs 
 
 ```java
 public class Point {
@@ -49,8 +49,8 @@ public class Point {
 }
 ```
 
-On lance le test: échec => il est nécessaire d'implementer  
-la méthode de comparaison: une méthode `equals` qui renvoie
+On lance le test: √©chec => il est n√©cessaire d'implementer  
+la m√©thode de comparaison: une m√©thode `equals` qui renvoie
 toujours `true`
  
 ```java
@@ -68,13 +68,13 @@ public class Point {
  
 Le test passe...
 
-Complétons avec un *contre*-cas:
-En créant, notre contre cas, renomons le premier test en: 
-two_points_with_same_coordinate_are_equals` et créons le
+Compl√©tons avec un *contre*-cas:
+En cr√©ant, notre contre cas, renomons le premier test en: 
+two_points_with_same_coordinate_are_equals` et cr√©ons le
 test `two_points_with_different_coordinate_are_not_equals`
 
 On rajoute `import static org.hamcrest.CoreMatchers.*;` pour faciliter
-l'écriture de nos assertions:
+l'√©criture de nos assertions:
 
 ```java
 	@Test
@@ -85,9 +85,9 @@ l'écriture de nos assertions:
 	}
 ```
 
-Le test est en échec
+Le test est en √©chec
 
-On corrige la méthode `equals` pour prendre en compte les coordonnées.
+On corrige la m√©thode `equals` pour prendre en compte les coordonn√©es.
 
 ```java
 @Override
@@ -100,8 +100,8 @@ public boolean equals(Object o) {
 }
 ```
 
-On notera au passage la nécessité de conserver les valeurs x et y, 
-jusqu'à présent non utilisées.
+On notera au passage la n√©cessit√© de conserver les valeurs x et y, 
+jusqu'√† pr√©sent non utilis√©es.
 
 Au passage on marquera les champs `final` parce que c'est bien!
 
@@ -118,8 +118,8 @@ Au passage on marquera les champs `final` parce que c'est bien!
 
 Et hop, le test passe
 
-Bon et notre barycentre dans ton ça? 
-Le barycentre d'un point est lui même:
+Bon et notre barycentre dans ton √ßa? 
+Le barycentre d'un point est lui m√™me:
 
 ```java
 	@Test
@@ -128,7 +128,7 @@ Le barycentre d'un point est lui même:
 	}
 ```
 
-Création de la méthode `barycenterOf`
+Cr√©ation de la m√©thode `barycenterOf`
 
 ```java
 	private Point barycenterOf(Point point) {
@@ -137,7 +137,7 @@ Création de la méthode `barycenterOf`
 ```
 
 Teste passe tout de suite :)
-On enchaine donc rapidement à deux points: `middle_of_two_points`
+On enchaine donc rapidement √† deux points: `middle_of_two_points`
 
 ```
 	@Test
@@ -148,7 +148,7 @@ On enchaine donc rapidement à deux points: `middle_of_two_points`
 	}
 ```
 
-On créé une seconde méthode qui ce coup-ci prend deux points en paramètres:
+On cr√©√© une seconde m√©thode qui ce coup-ci prend deux points en param√®tres:
 
 ```java
 	private Point barycenterOf(Point point1, Point point2) {
@@ -160,9 +160,9 @@ Et... le test passe :)
 
 Rouge -> Vert -> Refactoring
 
-Y a-t-il des choses à refactorer ?
-Eh bien on pourrait alléger la longue ligne en ajoutant 
-une méthode `add` permettant d'ajouter un point à un autre.
+Y a-t-il des choses √† refactorer ?
+Eh bien on pourrait all√©ger la longue ligne en ajoutant 
+une m√©thode `add` permettant d'ajouter un point √† un autre.
 
 ```java
 	private Point barycenterOf(Point point1, Point point2) {
@@ -170,7 +170,7 @@ une méthode `add` permettant d'ajouter un point à un autre.
 	}
 ```
 
-On implémente rapidement les méthodes `add` et `scale`:
+On impl√©mente rapidement les m√©thodes `add` et `scale`:
 
 ```java
 	public Point add(Point other) {
@@ -182,9 +182,9 @@ On implémente rapidement les méthodes `add` et `scale`:
 	}
 ```
 
-On relance les tests pour s'assurer que rien n'a été cassé: OK
+On relance les tests pour s'assurer que rien n'a √©t√© cass√©: OK
 
-Passons désormais à 3 points:
+Passons d√©sormais √† 3 points:
 
 ```java
 	@Test
@@ -219,7 +219,7 @@ Et hop le test passe.
 ```
 
 Dans notre phase de refactoring, voyons comment nous pourrions simplifier cela.
-Remplaçons, les paramètres par un nombre variable de paramètres:
+Rempla√ßons, les param√®tres par un nombre variable de param√®tres:
 
 ```java
 	private Point barycenterOf(Point point, Point...points) {
@@ -231,12 +231,12 @@ Remplaçons, les paramètres par un nombre variable de paramètres:
 	}
 ```
 
-On relance les tests : Ouf on a rien cassé
+On relance les tests : Ouf on a rien cass√©
 
-Continuons notre simplification et supprimons la méthode `barycenterOf(Point, Point)`
+Continuons notre simplification et supprimons la m√©thode `barycenterOf(Point, Point)`
 
-On relance les tests : ça passe toujours
+On relance les tests : √ßa passe toujours
 
-Continuons sur notre envolée et supprimons la méthode `barycenterOf(Point)`
+Continuons sur notre envol√©e et supprimons la m√©thode `barycenterOf(Point)`
 
-On relance les tests : ça passe toujours uh uh!
+On relance les tests : √ßa passe toujours uh uh!
